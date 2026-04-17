@@ -1,3 +1,13 @@
+# /// script
+# requires-python = ">=3.10"
+# dependencies = [
+#     "marimo>=0.23.1",
+#     "pandas",
+#     "matplotlib",
+#     "numpy",
+#     "scipy"
+# ]
+# ///
 import marimo
 
 __generated_with = "0.23.1"
@@ -6,14 +16,18 @@ app = marimo.App(width="full")
 
 @app.cell
 def _():
+    import marimo as mo
+    return mo
+
+@app.cell
+def _():
     import pandas as pd
     import matplotlib.pyplot as plt
     import numpy as np
-    import marimo as mo
 
     from Functions.implement import rate,getThetas,getXrc
 
-    return getThetas, getXrc, mo, np, pd, plt, rate
+    return getThetas, getXrc, np, pd, plt, rate
 
 
 @app.cell
